@@ -15,10 +15,10 @@ $("form.form-bottom").submit(function(e) {
 });
 
 function submit(email) {
-    $.get('https://script.google.com/macros/u/0/s/AKfycbzFvk9t35n_CXW-K-4j-MF6ct-gzStadRrh27cNeQu1UGJbopiO/exec',
+    $.post('https://script.google.com/macros/u/0/s/AKfycbzFvk9t35n_CXW-K-4j-MF6ct-gzStadRrh27cNeQu1UGJbopiO/exec',
         {
             'email': email
         }, function(){
             console.log("success bottom");
-        });
+        }, 'json');
 }
