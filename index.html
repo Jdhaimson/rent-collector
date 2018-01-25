@@ -240,12 +240,8 @@
       $('form').submit(function() {
         var email = $(".email-top").val() || $(".email-bottom").val();
         if (email) {
-          ga('send', {
-            hitType: 'event',
-            eventCategory: 'email',
-            eventAction: 'email received',
-            eventLabel: email
-          });
+          var tracker = ga.getAll()[0]
+          tracker.send('event', 'email', 'email received', email);
         }
       });
     </script>
