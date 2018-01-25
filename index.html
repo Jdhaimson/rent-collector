@@ -236,6 +236,18 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $('form').submit(function() {
+        var email = $(".email-top").val() || $(".email-bottom").val();
+        if (email) {
+          ga('send', {
+            hitType: 'event',
+            eventCategory: 'email',
+            eventValue: email
+          });
+        }
+      });
+    </script>
 
   </body>
 
