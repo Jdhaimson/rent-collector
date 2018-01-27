@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101972688-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-101972688-2');
+	</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MyRent - Get Started</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"/>
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/landing-page.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">MyRent</a>
+        <!--<a class="btn btn-primary" href="#">Sign In</a>-->
+      </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header class="masthead text-center">
+      <div class="overlay"></div>
+        <div class="row centered-form">
+        <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+          <div class="card panel panel-default p-4">
+            <div class="panel-heading" style="padding-bottom: 1rem">
+              <h3 class="panel-title">Looks like you caught us too soon!</h3>
+            </div>
+            <div class="panel-body">
+              Thank you for your interest in MyRent! We are currently in private beta, and are expecting to have a public launch soon.
+              We will email you with more information in the near future! Since we're not offering a product yet, 
+              we've refrained from saving any of your other personal information.
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <p class="text-muted small mb-4 mb-lg-0">&copy; MyRent 2018. All Rights Reserved.</p>
+          </div>
+        
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+			var formatMoney = function(num) {
+				return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+		  };
+
+			$('#rent').change(function() {
+				var rent = parseFloat($('#rent').val());
+				$('#rent-repeat').text(formatMoney(rent));
+
+			  var totalCost = rent + 5;
+				$('#total-cost').text(formatMoney(totalCost));
+			});
+    </script>
+
+  </body>
+
+</html>

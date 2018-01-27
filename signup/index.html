@@ -45,14 +45,15 @@
     </nav>
 
     <!-- Masthead -->
-    <header class="masthead text-center">
+    <header class="masthead text-center" style="padding:3rem">
       <div class="overlay"></div>
         <div class="row centered-form">
         <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
           <div class="card panel panel-default p-4">
             <div class="panel-heading">
               <h3 class="panel-title">Get started with MyRent!</h3>
-             </div>
+            </div>
+              <a href='../#how-it-works'>or learn more about how it works</a>
              <div class="panel-body">
               <form role="form">
 								<hr>
@@ -109,7 +110,7 @@
 										</div>
 								  </div>
 								</div>
-
+                <hr>
 								<div class="row">
 									<div class="col-8">
 									  <div class="form-group">
@@ -125,7 +126,7 @@
 										+ $5.00 <small class="text-muted">service fee</small>
 									</div>
 								</div>
-										<hr>
+										
 										<span class="h5">$<span id="total-cost"></span></span> <small class="text-muted">/ month with service fee</small>
 
 								<hr>
@@ -194,6 +195,30 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
+      $("form").submit(function(e) {
+        e.preventDefault();
+        var password = $("#password").val();
+        var password_confirmation = $("#password_confirmation").val();
+        var name = $("#name").val();
+        var address = $("#address").val();
+        var city = $("#city").val();
+        var state = $("#state").val();
+        var zip = $("#zip").val();
+        var apt = $("#apt").val();
+        if (password &&
+          password_confirmation &&
+          name &&
+          address &&
+          city &&
+          state &&
+          zip &&
+          apt) {
+          // var tracker = ga.getAll()[0]
+          // tracker.set('page', '/beta');
+          // tracker.send('pageview');
+          window.location = '../beta';
+        }
+      })
 			var formatMoney = function(num) {
 				return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 		  };

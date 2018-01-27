@@ -106,14 +106,14 @@
     </section>
 
     <!-- Image Showcases -->
-    <section class="showcase bg-light">
+    <section class="showcase bg-light" id='how-it-works'>
       <h2 style="text-align: center;" class="mb-5">How does it work?</h2>
       <div class="container-fluid p-0">
         <div class="row no-gutters">
           <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/nyc.jpg');"></div>
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
             <h2>Pay Any Landlord</h2>
-            <p class="lead mb-0">Provide your landlord's email and address. We'll invite your landlord to receive payements through MyRent, or we'll mail them a check on your behalf!</p>
+            <p class="lead mb-0">Provide your landlord's email and address. We'll invite your landlord to receive payments through MyRent, or we'll mail them a check on your behalf!</p>
           </div>
         </div>
         <div class="row no-gutters">
@@ -258,6 +258,8 @@
               'entry.737491003': email
             },
             complete: function() {
+              // tracker.set('page', '/signup');
+              // tracker.send('pageview');
               window.location = "./signup/"
             }
           })
