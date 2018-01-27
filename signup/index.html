@@ -60,7 +60,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
-                      <input type="text" name="name" id="name" class="form-control input-sm" placeholder="Name">
+                      <input required="true" type="text" name="name" id="name" class="form-control input-sm" placeholder="Name">
                     </div>
                   </div>
                 </div>
@@ -68,12 +68,12 @@
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                      <input required="true" type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
                     </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                      <input required="true" type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
                     </div>
                   </div>
                 </div>
@@ -83,12 +83,12 @@
 								<div class="row">
 									<div class="col-8">
 									  <div class="form-group">
-										  <input type="text" name="address" id="address" class="form-control input-sm" placeholder="Address">
+										  <input required="true" type="text" name="address" id="address" class="form-control input-sm" placeholder="Address">
 										</div>
 								  </div>
 									<div class="col-4">
 									  <div class="form-group">
-										  <input type="text" name="apt" id="apt" class="form-control input-sm" placeholder="Apt #">
+										  <input required="true" type="text" name="apt" id="apt" class="form-control input-sm" placeholder="Apt #">
 										</div>
 								  </div>
 								</div>
@@ -96,17 +96,17 @@
 								<div class="row">
 									<div class="col-4">
 									  <div class="form-group">
-										  <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
+										  <input required="true" type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
 										</div>
 								  </div>
 									<div class="col-4">
 									  <div class="form-group">
-										  <input type="text" name="state" id="state" class="form-control input-sm" placeholder="State">
+										  <input required="true" type="text" name="state" id="state" class="form-control input-sm" placeholder="State">
 										</div>
 								  </div>
 									<div class="col-4">
 									  <div class="form-group">
-										  <input type="text" name="zip" id="zip" class="form-control input-sm" placeholder="Zip">
+										  <input required="true" type="text" name="zip" id="zip" class="form-control input-sm" placeholder="Zip">
 										</div>
 								  </div>
 								</div>
@@ -116,7 +116,7 @@
 									  <div class="form-group">
 										  <div class="input-group">
 												<span class="input-group-addon">$</span>
-										    <input type="number" name="rent" id="rent" class="form-control input-sm" placeholder="Monthly Rent">
+										    <input required="true" type="number" name="rent" id="rent" class="form-control input-sm" placeholder="Monthly Rent">
 											</div>
 										</div>
 									</div>
@@ -196,7 +196,6 @@
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
       $("form").submit(function(e) {
-        e.preventDefault();
         var password = $("#password").val();
         var password_confirmation = $("#password_confirmation").val();
         var name = $("#name").val();
@@ -216,6 +215,7 @@
           // var tracker = ga.getAll()[0]
           // tracker.set('page', '/beta');
           // tracker.send('pageview');
+          e.preventDefault();
           window.location = '../beta';
         }
       })
