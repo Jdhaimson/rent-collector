@@ -248,7 +248,7 @@
         if (email) {
           // send event to Google Analytics
           var tracker = ga.getAll()[0]
-          tracker.send('event', 'email', 'email received', email);
+          tracker.send('event', 'email', 'signup', email);
           
           $.ajax({
             type: 'POST',
@@ -258,9 +258,7 @@
               'entry.737491003': email
             },
             complete: function() {
-              // tracker.set('page', '/signup');
-              // tracker.send('pageview');
-              window.location = "./signup/"
+              window.location = "./signup/?email=" + email
             }
           })
         }

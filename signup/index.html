@@ -196,28 +196,13 @@
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
       $("form").submit(function(e) {
-        var password = $("#password").val();
-        var password_confirmation = $("#password_confirmation").val();
-        var name = $("#name").val();
-        var address = $("#address").val();
-        var city = $("#city").val();
-        var state = $("#state").val();
-        var zip = $("#zip").val();
-        var apt = $("#apt").val();
-        if (password &&
-          password_confirmation &&
-          name &&
-          address &&
-          city &&
-          state &&
-          zip &&
-          apt) {
-          // var tracker = ga.getAll()[0]
-          // tracker.set('page', '/beta');
-          // tracker.send('pageview');
-          e.preventDefault();
-          window.location = '../beta';
-        }
+        e.preventDefault();
+        var url = new URL(window.location.href);
+        var email = url.searchParams.get('email');
+        
+        var tracker = ga.getAll()[0];
+        tracker.send('event', 'email', 'beta', email);
+        window.location = '../beta';
       })
 			var formatMoney = function(num) {
 				return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
