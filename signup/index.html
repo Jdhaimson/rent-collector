@@ -53,7 +53,7 @@
             <div class="panel-heading">
               <h3 class="panel-title">Get started with MyRent!</h3>
             </div>
-              <a href='../#how-it-works'>or learn more about how it works</a>
+              <a id="learn-more" href='../#how-it-works'>or learn more about how it works</a>
              <div class="panel-body">
               <form role="form">
 								<hr>
@@ -230,6 +230,13 @@
 			  var totalCost = rent + 5;
 				$('#total-cost').text(formatMoney(totalCost));
 			});
+      $("#learn-more").click(function(e) {
+          e.preventDefault();
+          // send event to Google Analytics
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'redirect', 'learn more');
+          window.location = "../#how-it-works";
+      });
     </script>
 
   </body>
