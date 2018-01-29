@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MyRent - Get Started</title>
+    <title>MyRent - Pricing</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,107 +34,59 @@
 
   </head>
 
-  <body>
+  <body class='bg-light'>
 
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" href="../">MyRent</a>
-        <!--<a class="btn btn-primary" href="#">Sign In</a>-->
       </div>
     </nav>
 
     <!-- Masthead -->
-    <header class="masthead text-center">
+    <header class="masthead text-center py-0 py-sm-5">
       <div class="overlay"></div>
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 mx-auto">
           <div class="card panel panel-default p-4">
             <div class="panel-heading">
-              <h3 class="panel-title">Get started with MyRent!</h3>
+              <h3 class="panel-title">Pay rent online with MyRent</h3>
             </div>
-              <!-- <a id="learn-more" href='../#how-it-works'>or learn more about how it works</a> -->
+            <hr></hr>
+            <h5 class='mb-4'>Select a pricing plan</h5>
              <div class="panel-body">
               <form role="form">
-								<hr>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group">
-                      <input required="true" type="text" name="name" id="name" class="form-control input-sm" placeholder="Name">
+                <div class='row'>
+                  <div class='col-xs-12 col-sm-6 mb-3'>
+  								  <div class='card'>
+                      <div class='card-header'>Pay as you go</div>
+                      <div class='card-block' style='padding: 10px'>
+                        <div>
+                          <span>$</span>
+                          <span class='display-3'>5</span>
+                        </div>
+                        <div class='text-muted'>per transaction</div>
+                      </div>
+                      <div class='card-footer'>
+                        <a href="/beta" class="btn btn-primary" style='width: 100%'>Sign up</a>
+                      </div>
                     </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <input required="true" type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+								  </div>
+                  <div class='col-xs-12 col-sm-6'>
+                    <div class='card'>
+                      <div class='card-header'>Subscribe for a year</div>
+                      <div class='card-block' style='padding: 10px'>
+                        <div>
+                          <span>$</span>
+                          <span class='display-3'>50</span>
+                        </div>
+                        <div class='text-muted'>for 12 payments per year</div>
+                      </div>
+                      <div class='card-footer'>
+                        <a href="/beta" class="btn btn-primary" style='width: 100%'>Sign up</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <input required="true" type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
-                    </div>
-                  </div>
-                </div>
-
-								<hr>
-
-								<div class="row">
-									<div class="col-8">
-									  <div class="form-group">
-										  <input required="true" type="text" name="address" id="address" class="form-control input-sm" placeholder="Address">
-										</div>
-								  </div>
-									<div class="col-4">
-									  <div class="form-group">
-										  <input required="true" type="text" name="apt" id="apt" class="form-control input-sm" placeholder="Apt #">
-										</div>
-								  </div>
-								</div>
-
-								<div class="row">
-									<div class="col-4">
-									  <div class="form-group">
-										  <input required="true" type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
-										</div>
-								  </div>
-									<div class="col-4">
-									  <div class="form-group">
-										  <input required="true" type="text" name="state" id="state" class="form-control input-sm" placeholder="State">
-										</div>
-								  </div>
-									<div class="col-4">
-									  <div class="form-group">
-										  <input required="true" type="text" name="zip" id="zip" class="form-control input-sm" placeholder="Zip">
-										</div>
-								  </div>
-								</div>
-                <input type="submit" value="Setup Payment Profile" class="btn btn-info btn-block">
-                <hr>
-                <div class='py-4'>
-                <div>Sample monthly payment</div>
-                <div class='pb-4'>Nothing will be charged to your account</div>
-								<div class="row">
-									<div class="col-7">
-									  <div class="form-group">
-										  <div class="input-group">
-												<span class="input-group-addon" id="basic-addon1">$</span>
-										    <input type="number" name="rent" id="rent"  aria-describedby="basic-addon1" class="form-control input-sm" placeholder="Monthly Rent">
-											</div>
-										</div>
-									</div>
-
-									<div class="col-5 ml-auto text-left">
-										<!-- $<span id="rent-repeat">___</span> <small class="text-muted">rent</small><br/> -->
-										+ $5.00 <small class="text-muted">service fee per transaction</small>
-									</div>
-								</div>
-										<span class="h5">$<span id="total-cost"></span></span> <small class="text-muted">/ month with service fee</small>
-                    <div>
-                    <small class='text-muted'>The service fee is <span id="percent-cost">__</span></span>% of your total rent.</small>
-                  </div>
-                  </div>
+                  </div>               
               </form>
             </div>
           </div>

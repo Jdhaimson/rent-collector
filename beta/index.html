@@ -34,7 +34,7 @@
 
   </head>
 
-  <body>
+  <body class='bg-light'>
 
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
@@ -54,10 +54,19 @@
               <h3 class="panel-title">Looks like you caught us too soon!</h3>
             </div>
             <div class="panel-body">
-              Thank you for your interest in MyRent! We are currently in private beta, and are expecting to have a public launch soon.
-              We will email you with more information in the near future! Since we're not offering a product yet, 
-              we've refrained from saving any of your other personal information.
+              Thank you for your interest in MyRent! We are still working on our product, and are expecting to have a public launch soon.
+              If you would like a reminder when we launch, drop your email below:
             </div>
+            <form id="application-form" target="_blank">
+              <div class="form-row mt-3">
+                <div class="col-md-9">
+                  <input type="email" class="form-control email" placeholder="Email">
+                </div>
+                <div class="col-md-3">
+                  <button type="submit" class="btn btn-block btn-primary">Remind me</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -78,17 +87,27 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-			var formatMoney = function(num) {
-				return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-		  };
-
-			$('#rent').change(function() {
-				var rent = parseFloat($('#rent').val());
-				$('#rent-repeat').text(formatMoney(rent));
-
-			  var totalCost = rent + 5;
-				$('#total-cost').text(formatMoney(totalCost));
-			});
+			$('form').submit(function(e) {
+        e.preventDefault();
+        var email = $(".email").val();
+        if (email) {
+          // send event to Google Analytics
+          var tracker = ga.getAll()[0]
+          tracker.send('event', 'email', 'beta', email);
+          
+          $.ajax({
+            type: 'POST',
+            url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSeAVMh19frGQeQtdmgGmAiOk5ta6U0KFfVB0FCd3MTn0RgJ0g/formResponse",
+            contentType: 'application/x-www-form-urlencoded',
+            data: {
+              'entry.737491003': email
+            },
+            complete: function() {
+              window.location = "./"
+            }
+          })
+        }
+      });
     </script>
 
   </body>
