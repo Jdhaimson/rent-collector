@@ -81,7 +81,7 @@
             <form id="application-form" target="_blank">
               <div class="form-row mt-3">
                 <div class="col-md-9">
-                  <input type="email" class="form-control email" placeholder="Email">
+                  <input id="email" type="email" class="form-control email" placeholder="Email">
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-block btn-primary">Remind me</button>
@@ -108,7 +108,7 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-			$('form').submit(function(e) {
+	$('form').submit(function(e) {
         e.preventDefault();
         var email = $(".email").val();
         if (email) {
@@ -124,7 +124,7 @@
               'entry.737491003': email
             },
             complete: function() {
-              window.location = "./"
+              window.location = "../";
             }
           })
         }

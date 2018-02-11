@@ -88,7 +88,7 @@
                         <div class='text-muted'>per transaction</div>
                       </div>
                       <div class='card-footer'>
-                        <a href="../beta/" class="btn btn-primary" style='width: 100%'>Sign up</a>
+                        <a id="signup-per-transaction" href="../beta/" class="btn btn-primary" style='width: 100%'>Sign up</a>
                       </div>
                     </div>
 								  </div>
@@ -103,7 +103,7 @@
                         <div class='text-muted'>for 12 payments per year</div>
                       </div>
                       <div class='card-footer'>
-                        <a href="../beta/" class="btn btn-primary" style='width: 100%'>Sign up</a>
+                        <a id="signup-annual" href="../beta/" class="btn btn-primary" style='width: 100%'>Sign up</a>
                       </div>
                     </div>
                   </div>               
@@ -167,34 +167,14 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-      $("form").submit(function(e) {
-        e.preventDefault();
-        var url = new URL(window.location.href);
-        var email = url.searchParams.get('email');
-        
-        var tracker = ga.getAll()[0];
-        tracker.send('event', 'email', 'beta', email);
-        window.location = '../beta';
-      })
-			var formatMoney = function(num) {
-				return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-		  };
-
-			$('#rent').change(function() {
-				var rent = parseFloat($('#rent').val());
-				$('#rent-repeat').text(formatMoney(rent));
-
-			  var totalCost = rent + 5;
-        var percent = Math.round(5.0 / rent * 100 * 100) / 100;
-				$('#total-cost').text(formatMoney(totalCost));
-        $("#percent-cost").text(percent);
-			});
-      $("#learn-more").click(function(e) {
-          e.preventDefault();
-          // send event to Google Analytics
+      $("#signup-per-transaction").click(function(e) {
           var tracker = ga.getAll()[0];
-          tracker.send('event', 'redirect', 'learn more');
-          window.location = "../#how-it-works";
+          tracker.send('event', 'signup', 'per transaction');
+      });
+
+      $("#signup-annual").click(function(e) {
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'signup', 'annual');
       });
     </script>
 
