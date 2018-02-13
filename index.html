@@ -54,7 +54,7 @@
               <a class="nav-link" href="#what-people-are-saying">What People Are Saying</a>
             </li>
           </ul>
-	      <a class="btn btn-primary" href="./pricing">Get Started</a>
+	      <a id="get-started-top" class="btn btn-primary" href="./pricing">Get Started</a>
         </div>
       </div>
     </nav>
@@ -77,7 +77,7 @@
               Forget about writing checks. Pay your rent in seconds. MyRent works with any landlord, so you can pay rent easily.
             </p>
             <div style="color: white">
-              <a href="#how-it-works" class="btn btn-circle js-scroll-trigger">
+              <a id="down-button" href="#how-it-works" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated" style='font-size:2rem; color: white'></i>
               </a>
             </div>
@@ -148,7 +148,7 @@
             </div>
             <h2>Pay Any Landlord</h2>
             <p class="lead mb-0">Provide your landlord's email and address. We'll invite your landlord to receive payments through MyRent, or we'll mail them a check on your behalf!</p>
-            <a class='btn btn-link' data-toggle='collapse' href='#pay-any-landlord' role='button' aria-expanded='false' aria-controls='pay-any-landlord'>
+            <a id="learn-more-landlord" class='btn btn-link' data-toggle='collapse' href='#pay-any-landlord' role='button' aria-expanded='false' aria-controls='pay-any-landlord'>
               Learn more
             </a>
             <div class="collapse lead mb-0" id='pay-any-landlord'>
@@ -166,7 +166,7 @@
             </div>
             <h2>Seamless Payment Setup</h2>
             <p class="lead mb-0">Set up your payment profile in seconds by linking your bank account, PayPal, or credit card. That's it! From then on, securely pay rent quickly and easily from your laptop, phone, or tablet.</p>
-            <a class='btn btn-link' data-toggle='collapse' href='#payment-setup' role='button' aria-expanded='false' aria-controls='payment-setup'>
+            <a id="learn-more-payment" class='btn btn-link' data-toggle='collapse' href='#payment-setup' role='button' aria-expanded='false' aria-controls='payment-setup'>
               Learn more
             </a>
             <div class="collapse lead mb-0" id='payment-setup'>
@@ -182,7 +182,7 @@
             </div>
             <h2>Pay Rent Anytime</h2>
             <p class="lead mb-0">MyRent lets you make one-time payments, schedule a few payments, or set up automatic payments to never miss paying rent again!</p>
-            <a class='btn btn-link' data-toggle='collapse' href='#rent-anytime' role='button' aria-expanded='false' aria-controls='rent-anytime'>
+            <a id="learn-more-timing" class='btn btn-link' data-toggle='collapse' href='#rent-anytime' role='button' aria-expanded='false' aria-controls='rent-anytime'>
               Learn more
             </a>
             <div class="collapse lead mb-0" id='rent-anytime'>
@@ -198,7 +198,7 @@
             </div>
             <h2>Secure payments</h2>
             <p class="lead mb-0">Security is our main concern. Each payment is backed by state-of-the-art encryption and secure protocols.</p>
-            <a class='btn btn-link' data-toggle='collapse' href='#security' role='button' aria-expanded='false' aria-controls='security'>
+            <a id="learn-more-security" class='btn btn-link' data-toggle='collapse' href='#security' role='button' aria-expanded='false' aria-controls='security'>
               Learn more
             </a>
             <div class="collapse lead mb-0" id='security'>
@@ -215,7 +215,7 @@
             </div>
             <h2>Invite Your Roommates</h2>
             <p class="lead mb-0">If you have roommates, MyRent will seamlessly coordinate your payments for you.</p>
-            <a class='btn btn-link' data-toggle='collapse' href='#roommates' role='button' aria-expanded='false' aria-controls='roommates'>
+            <a id="learn-more-roommates" class='btn btn-link' data-toggle='collapse' href='#roommates' role='button' aria-expanded='false' aria-controls='roommates'>
               Learn more
             </a>
             <div class="collapse lead mb-0" id='roommates'>
@@ -276,7 +276,7 @@
                 <!-- </div> -->
                 <div class='col-md-4'></div>
                 <div class="col-12 col-md-4">
-                  <a href='./pricing/' class="btn btn-block btn-lg btn-primary">Get Started</a>
+                  <a id="get-started-bottom" href='./pricing/' class="btn btn-block btn-lg btn-primary">Get Started</a>
                 </div>
                 <div class='col-md-4'></div>
               </div>
@@ -302,7 +302,45 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-      
+      $("#learn-more-landlord").click(function(e) {
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'learn more', 'landlord');
+      });
+
+      $("#learn-more-payment").click(function(e) {
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'learn more', 'payment');
+      });
+
+      $("#learn-more-timing").click(function(e) {
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'learn more', 'timing');
+      });
+
+      $("#learn-more-security").click(function(e) {
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'learn more', 'security');
+      });
+
+      $("#learn-more-roommates").click(function(e) {
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'learn more', 'roommates');
+      });
+
+      $("#get-started-bottom").click(function(e) {
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'get started', 'bottom');
+      });
+
+      $("#get-started-top").click(function(e) {
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'get started', 'top');
+      });
+
+      $("#down-button").click(function(e) {
+          var tracker = ga.getAll()[0];
+          tracker.send('event', 'down button', 'down');
+      });
     </script>
   </body>
 </html>
